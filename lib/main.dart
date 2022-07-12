@@ -28,7 +28,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-            fontFamily: 'Poppins', accentColor: custom_colors.shadowBlue),
+          fontFamily: 'Poppins',
+          accentColor: custom_colors.shadowBlue,
+        ),
         home: MainMenuScreen(),
       ),
     );

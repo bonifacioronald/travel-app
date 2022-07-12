@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 import '../models/colors.dart' as custom_colors;
 import '../models/category.dart';
@@ -11,6 +12,8 @@ import '../widgets/search_bar.dart';
 import '../widgets/top_trip_card.dart';
 
 class MainMenuScreen extends StatefulWidget {
+  const MainMenuScreen({Key? key}) : super(key: key);
+
   @override
   State<MainMenuScreen> createState() => _MainMenuScreenState();
 }
@@ -34,8 +37,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
         actions: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            decoration:
-                const BoxDecoration(shape: BoxShape.circle, boxShadow: []),
+            decoration: const BoxDecoration(shape: BoxShape.circle),
             child: CircleAvatar(
               backgroundImage: NetworkImage(userProfileAvatarUrl),
             ),
@@ -43,7 +45,49 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
         ],
         iconTheme: const IconThemeData(color: Colors.black87),
       ),
-      drawer: const Drawer(),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(color: Colors.white, boxShadow: [
+          BoxShadow(
+              color: custom_colors.shadowBlue, spreadRadius: 3, blurRadius: 5)
+        ]),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: GNav(
+            gap: 8,
+            backgroundColor: Colors.white,
+            color: Colors.black87,
+            activeColor: Colors.white,
+            tabBackgroundColor: custom_colors.greenAccent,
+            tabBorder: Border(),
+            padding: EdgeInsets.all(8),
+            textSize: 14,
+            textStyle:
+                TextStyle(fontWeight: FontWeight.normal, color: Colors.white),
+            tabs: const [
+              GButton(
+                icon: Icons.home_outlined,
+                text: 'Home',
+                iconColor: Colors.black87,
+              ),
+              GButton(
+                icon: Icons.bookmark_outline,
+                text: 'Saved',
+                iconColor: Colors.black87,
+              ),
+              GButton(
+                icon: Icons.add_circle_outline,
+                text: 'Add',
+                iconColor: Colors.black87,
+              ),
+              GButton(
+                icon: Icons.settings_outlined,
+                text: 'Settings',
+                iconColor: Colors.black87,
+              )
+            ]),
+      ),
+      drawer: const Drawer(
+        backgroundColor: Colors.white,
+      ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         width: double.infinity,
@@ -148,7 +192,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                     }),
               ),
               const SizedBox(
-                height: 20,
+                height: 40,
               ),
             ],
           ),
