@@ -20,6 +20,7 @@ class MainMenuScreen extends StatefulWidget {
 
 class _MainMenuScreenState extends State<MainMenuScreen> {
   int selectedCategoryIndex = 0;
+  int selectedBottomNavBarIndex = 0;
   String userProfileAvatarUrl =
       'https://www.shareicon.net/download/2016/05/24/770142_people_512x512.png';
 
@@ -46,41 +47,87 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
         iconTheme: const IconThemeData(color: Colors.black87),
       ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(color: Colors.white, boxShadow: [
-          BoxShadow(
-              color: custom_colors.shadowBlue, spreadRadius: 3, blurRadius: 5)
-        ]),
+        decoration: BoxDecoration(
+          color: custom_colors.backgroundColor,
+          // boxShadow: [
+          //   BoxShadow(
+          //       color: custom_colors.shadowBlue,
+          //       spreadRadius: 3,
+          //       blurRadius: 5)
+          // ],
+        ),
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: GNav(
             gap: 8,
-            backgroundColor: Colors.white,
+            backgroundColor: custom_colors.backgroundColor,
             color: Colors.black87,
-            activeColor: Colors.white,
-            tabBackgroundColor: custom_colors.greenAccent,
-            tabBorder: Border(),
-            padding: EdgeInsets.all(8),
+            activeColor: custom_colors.greenAccent,
+            tabBackgroundColor: Colors.white,
+            padding: EdgeInsets.all(12),
             textSize: 14,
+            iconSize: 28,
+            onTabChange: (index) {
+              setState(() {
+                selectedBottomNavBarIndex = index;
+              });
+            },
             textStyle:
                 TextStyle(fontWeight: FontWeight.normal, color: Colors.white),
-            tabs: const [
+            tabs: [
               GButton(
-                icon: Icons.home_outlined,
-                text: 'Home',
+                icon: selectedBottomNavBarIndex == 0
+                    ? Icons.home
+                    : Icons.home_outlined,
+                shadow: [
+                  BoxShadow(
+                      color: selectedBottomNavBarIndex == 0
+                          ? custom_colors.shadowBlue
+                          : custom_colors.backgroundColor,
+                      blurRadius: 5,
+                      spreadRadius: 3)
+                ],
                 iconColor: Colors.black87,
               ),
               GButton(
-                icon: Icons.bookmark_outline,
-                text: 'Saved',
+                icon: selectedBottomNavBarIndex == 1
+                    ? Icons.bookmark
+                    : Icons.bookmark_outline,
+                shadow: [
+                  BoxShadow(
+                      color: selectedBottomNavBarIndex == 1
+                          ? custom_colors.shadowBlue
+                          : custom_colors.backgroundColor,
+                      blurRadius: 5,
+                      spreadRadius: 3)
+                ],
                 iconColor: Colors.black87,
               ),
               GButton(
-                icon: Icons.add_circle_outline,
-                text: 'Add',
+                icon: selectedBottomNavBarIndex == 2
+                    ? Icons.add_circle
+                    : Icons.add_circle_outline,
+                shadow: [
+                  BoxShadow(
+                      color: selectedBottomNavBarIndex == 2
+                          ? custom_colors.shadowBlue
+                          : custom_colors.backgroundColor,
+                      blurRadius: 5,
+                      spreadRadius: 3)
+                ],
                 iconColor: Colors.black87,
               ),
               GButton(
-                icon: Icons.settings_outlined,
-                text: 'Settings',
+                icon: selectedBottomNavBarIndex == 3
+                    ? Icons.settings
+                    : Icons.settings_outlined,
+                shadow: [
+                  BoxShadow(
+                      color: selectedBottomNavBarIndex == 3
+                          ? custom_colors.shadowBlue
+                          : custom_colors.backgroundColor,
+                      blurRadius: 5,
+                      spreadRadius: 3)
+                ],
                 iconColor: Colors.black87,
               )
             ]),
