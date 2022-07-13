@@ -12,7 +12,7 @@ import '../widgets/search_bar.dart';
 import '../widgets/top_trip_card.dart';
 
 class MainMenuScreen extends StatefulWidget {
-  const MainMenuScreen({Key? key}) : super(key: key);
+  static const routeName = '/main-menu';
 
   @override
   State<MainMenuScreen> createState() => _MainMenuScreenState();
@@ -49,12 +49,6 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: custom_colors.backgroundColor,
-          // boxShadow: [
-          //   BoxShadow(
-          //       color: custom_colors.shadowBlue,
-          //       spreadRadius: 3,
-          //       blurRadius: 5)
-          // ],
         ),
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: GNav(
@@ -132,7 +126,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
               )
             ]),
       ),
-      drawer: const Drawer(
+      drawer: Drawer(
         backgroundColor: Colors.white,
       ),
       body: Container(
