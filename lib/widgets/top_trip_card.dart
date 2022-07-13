@@ -30,7 +30,7 @@ class TopTripCard extends StatelessWidget {
               width: double.infinity,
               height: 100,
               child: Image.network(
-                data.imageUrl,
+                data.mainMenuImageUrl,
                 fit: BoxFit.cover,
               ),
             ),
