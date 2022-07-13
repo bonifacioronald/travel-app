@@ -10,12 +10,12 @@ class TopTripsProvider with ChangeNotifier {
           'https://media-cdn.tripadvisor.com/media/photo-s/0d/05/34/17/railay-beach.jpg',
       rating: '4.7',
       description:
-          'Railay is an incredible Thai beach paradise, cut-off from the mainland by soaring cliffs. Railay boasts pristine beaches, a jungled-laden mountain coastline, and laidback vibes to keep relaxed yet many things to do to stay busy. Railay is what Thailand dreams are made of',
-      detailImageUrl:
-          'https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/82/88.jpg',
+          'Railay is an incredible Thai beach paradise, cut-off from the mainland by soaring cliffs. Railay boasts pristine beaches, a jungled-laden mountain coastline, and laidback vibes to keep relaxed yet many things to do to stay busy. Railay is what Thailand dreams are made of.',
+      detailImageUrl: 'https://avatarfiles.alphacoders.com/122/122797.jpg',
       duration: 2,
-      price: 120,
+      price: 80,
       category: 'Beach',
+      isFavorited: false,
     ),
     TopTrip(
       country: 'Malaysia',
@@ -30,6 +30,7 @@ class TopTripsProvider with ChangeNotifier {
       duration: 3,
       price: 180,
       category: 'Hotel',
+      isFavorited: false,
     ),
     TopTrip(
       country: 'Indonesia',
@@ -44,6 +45,9 @@ class TopTripsProvider with ChangeNotifier {
       duration: 2,
       price: 150,
       category: 'Beach',
+      isFavorited: false,
     ),
   ];
 }
+
+void toggleFavorite() {}

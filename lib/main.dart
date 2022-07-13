@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:travel_app_green/screens/onboarding_screen.dart';
+import 'package:travel_app_green/screens/top_trip_detail_screen.dart';
 
 import './models/colors.dart' as custom_colors;
 import '../providers/categories_provider.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         routes: {
           OnboardingScreen.routeName: (ctx) => OnboardingScreen(),
           MainMenuScreen.routeName: (ctx) => MainMenuScreen(),
+          TopTripDetailScreen.routeName: (ctx) => TopTripDetailScreen(),
         },
       ),
     );

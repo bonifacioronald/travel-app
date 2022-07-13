@@ -10,6 +10,7 @@ class TopTrip {
   int duration;
   String description;
   String category;
+  bool isFavorited;
 
   TopTrip(
       {required this.country,
@@ -20,5 +21,6 @@ class TopTrip {
       required this.detailImageUrl,
       required this.duration,
       required this.price,
-      required this.category});
+      required this.category,
+      required this.isFavorited});
 }
