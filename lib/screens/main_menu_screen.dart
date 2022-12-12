@@ -233,7 +233,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                     }),
               ),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
             ],
           ),

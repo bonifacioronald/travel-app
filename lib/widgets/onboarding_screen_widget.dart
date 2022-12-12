@@ -76,14 +76,14 @@ class OnboardingScreenWidget extends StatelessWidget {
                             children: [
                               GestureDetector(
                                 onTap: () => Navigator.of(context)
-                                    .popAndPushNamed(MainMenuScreen.routeName),
+                                    .pushNamed(MainMenuScreen.routeName),
                                 child: Container(
                                   child: Text(
                                     'Skip',
                                     style: TextStyle(
                                         fontSize: 16,
                                         color: custom_colors.greenAccent
-                                            .withOpacity(0.4)),
+                                            .withOpacity(0.7)),
                                   ),
                                 ),
                               ),
@@ -98,6 +98,7 @@ class OnboardingScreenWidget extends StatelessWidget {
                                         child: Text(
                                           'Next',
                                           style: TextStyle(
+                                              fontWeight: FontWeight.bold,
                                               fontSize: 16,
                                               color: custom_colors.greenAccent),
                                         ),

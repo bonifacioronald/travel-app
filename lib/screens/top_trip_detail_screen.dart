@@ -22,7 +22,7 @@ class _TopTripDetailScreenState extends State<TopTripDetailScreen> {
 
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         width: double.infinity,
         height: double.infinity,
         color: custom_colors.backgroundColor,
@@ -33,8 +33,8 @@ class _TopTripDetailScreenState extends State<TopTripDetailScreen> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 30,
+                    const SizedBox(
+                      height: 40,
                     ),
                     Stack(
                       children: [
@@ -49,7 +49,7 @@ class _TopTripDetailScreenState extends State<TopTripDetailScreen> {
                         Container(
                           width: double.infinity,
                           height: 440,
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 20),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +72,7 @@ class _TopTripDetailScreenState extends State<TopTripDetailScreen> {
                                                 spreadRadius: 1,
                                                 blurRadius: 3)
                                           ]),
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.arrow_back_ios_rounded,
                                         color: Colors.black87,
                                         size: 14,
@@ -98,12 +98,12 @@ class _TopTripDetailScreenState extends State<TopTripDetailScreen> {
                                                 blurRadius: 3)
                                           ]),
                                       child: data.isFavorited
-                                          ? Icon(
+                                          ? const Icon(
                                               Icons.favorite,
                                               color: Colors.red,
                                               size: 20,
                                             )
-                                          : Icon(
+                                          : const Icon(
                                               Icons.favorite_border,
                                               color: Colors.black87,
                                               size: 20,
@@ -112,24 +112,24 @@ class _TopTripDetailScreenState extends State<TopTripDetailScreen> {
                                   )
                                 ],
                               ),
-                              Spacer(),
+                              const Spacer(),
                               Padding(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 20, vertical: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text('${data.destination},',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             color: Colors.white,
                                             fontSize: 24)),
                                     Text(data.country,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             color: Colors.white,
                                             fontSize: 24)),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 16,
                                     ),
                                     Container(
@@ -141,7 +141,7 @@ class _TopTripDetailScreenState extends State<TopTripDetailScreen> {
                                               BorderRadius.circular(4)),
                                       child: Center(
                                         child: Text(data.category,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 14)),
                                       ),
@@ -154,7 +154,7 @@ class _TopTripDetailScreenState extends State<TopTripDetailScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
@@ -174,7 +174,7 @@ class _TopTripDetailScreenState extends State<TopTripDetailScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Padding(
@@ -182,10 +182,11 @@ class _TopTripDetailScreenState extends State<TopTripDetailScreen> {
                       child: Text(
                         data.description,
                         textAlign: TextAlign.justify,
-                        style: TextStyle(color: Colors.black54, fontSize: 14),
+                        style: const TextStyle(
+                            color: Colors.black54, fontSize: 14),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                   ],
@@ -193,11 +194,11 @@ class _TopTripDetailScreenState extends State<TopTripDetailScreen> {
               ),
             ),
             Container(
-                decoration: BoxDecoration(boxShadow: [
+                decoration: const BoxDecoration(boxShadow: [
                   BoxShadow(
                       color: Colors.white,
-                      blurRadius: 30,
-                      spreadRadius: 10,
+                      blurRadius: 20,
+                      spreadRadius: 0,
                       offset: Offset(0, -20)),
                 ]),
                 child: FullWidthRoundedButton(
