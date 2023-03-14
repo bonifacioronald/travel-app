@@ -25,7 +25,6 @@ External Packages and Dependecies:
 
 - Onboarding Screens
 ![Travel App - Onboarding](https://user-images.githubusercontent.com/106251683/206984391-242efba9-93d9-42bc-83b7-8b08d24a9cac.png)
-d-5a77d70c5540.png)
 
 - Home Screens
 ![Travel App - Home Screen](https://user-images.githubusercontent.com/106251683/206984379-ba0ae470-a998-44bf-af55-9e63174c97d0.png)
